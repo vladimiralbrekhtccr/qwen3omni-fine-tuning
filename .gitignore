@@ -1,0 +1,8 @@
+.cache/
+.venv/
+data/
+models/
+.env
+output/
+transformers/
+wandb/
