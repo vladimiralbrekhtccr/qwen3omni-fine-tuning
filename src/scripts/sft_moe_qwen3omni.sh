@@ -5,7 +5,11 @@ set -u
 export TRITON_CACHE_DIR=".cache/.triton_cache"
 mkdir -p "$TRITON_CACHE_DIR"
 
-export WANDB_API_KEY="9c677fae879db422dc5d598f4bcdac4c4e15f667"
+if [ -f .env ]; then
+  set -a # Automatically export all variables
+  source .env
+  set +a # Stop automatically exporting
+fi
 
 MODEL_PATH="/home/vladimir_albrekht/projects/2025_sep_22_qwen3omni/ms_swift_training/approach_2_transformers_based/models/5B_small_v"
 DATA_DIR="data/train"
